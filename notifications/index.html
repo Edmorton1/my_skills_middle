@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="notfiy">уведомление</button>
+    <script>
+        const btn = document.getElementById('notfiy')
+        btn.onclick = async () => {
+            const permission = await Notification.requestPermission()
+            if (permission === 'granted') {
+                const n = new Notification('Title', {
+                    body: 'Test',
+                    icon: './image.png',
+                    silent: false
+                })
+                n.onclick = () => console.log('asdasd')
+                n.on
+            }
+        }
+    </script>
+</body>
+
+</html>

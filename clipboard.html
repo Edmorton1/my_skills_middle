@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>test</div>
+    <button id="copy">копировать</button>
+    <input type="text">
+    <button id="paste">вставить</button>
+    <input type="text" id="paste-input">
+    <script>
+        const btnCopy = document.getElementById('copy')
+
+        btnCopy.onclick = async () => {
+            console.log('asda')
+            await navigator.clipboard.writeText('Привет');
+        }
+        const btnPaste = document.getElementById('paste')
+
+        const input = document.getElementById('paste-input')
+
+        btnPaste.onclick = async () => {
+            const text = await navigator.clipboard.readText()
+            console.log({ text })
+            input.value = text
+        }
+    </script>
+</body>
+
+</html>

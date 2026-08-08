@@ -17,8 +17,6 @@ const partition = (arr, left, right) => {
 }
 
 const quickSort = (arr, left = 0, right = arr.length - 1) => {
-  console.log({left, right});
-
   if (left >= right) {
     return
   }
